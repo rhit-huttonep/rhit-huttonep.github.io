@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Salsa&display=swap');
+
+:root {
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+
+    --light-color: 250, 250, 250;
+    --body-color: #ff0303;
+    --heading-color:#e75009;
+    --contrast-color: #0F40FF;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.4;
+    font-family: 'Handlee', cursive;
+    color: var(--body-color);
+
+    background-image: radial-gradient(circle at 67% 83%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 1%,
+    transparent 1%, transparent 5%,transparent 5%, transparent 100%),radial-gradient(circle at 24% 80%, hsla(317,0%,96%,0.05) 0%,
+    hsla(317,0%,96%,0.05) 27%,transparent 27%, transparent 63%,transparent 63%, transparent 100%),radial-gradient(circle at 23% 5%,
+    hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 26%,transparent 26%, transparent 82%,transparent 82%, transparent 100%),
+    radial-gradient(circle at 21% 11%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 35%,transparent 35%, transparent 45%,
+    transparent 45%, transparent 100%),radial-gradient(circle at 10% 11%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 21%,
+    transparent 21%, transparent 81%,transparent 81%, transparent 100%),radial-gradient(circle at 19% 61%, hsla(317,0%,96%,0.05) 0%,
+    hsla(317,0%,96%,0.05) 20%,transparent 20%, transparent 61%,transparent 61%, transparent 100%),radial-gradient(circle at 13% 77%,
+    hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 63%,transparent 63%, transparent 72%,transparent 72%, transparent 100%),
+    radial-gradient(circle at 30% 93%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 33%,transparent 33%, transparent 82%,
+    transparent 82%, transparent 100%),linear-gradient(90deg, rgb(22, 176, 207),rgb(103, 7, 215));
+}
+
+main {
+    background-color: rgba(var(--light-color), 0.5);
+}
+
+body > * {
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    font-family: 'Fondamento', cursive;
+    color: var(--heading-color);
+}
+
+a {
+    color:(--body-color);
+    text-decoration-color: var(--contrast-color);
+}
+
+a:hover{
+    color: var(--contrast-color);
+}
+
+body#about img { height: 15em; }
+/* body#portfolio img { height: 25em; } */
+
+p {
+    max-width: 40em
+}
+
+body {
+    display: grid;
+    grid-template-areas:    "head head"
+                            "nav nav"
+                            "main main"
+                            "foot foot";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+@media screen and (min-wdith: 25em) {
+    body{
+        grid-template-areas:"head head"
+                            "nav main"
+                            "foot foot";
+        grid-template-rows: auto 1fr auto;
+    }
+}
+
+body > header {
+    grid-area: head;
+    /* background-color: yellow; */
+
+}
+
+body > nav {
+    grid-area: nav;
+    /* background-color: blue; */
+    
+}
+
+body > nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* body > nav li {
+    display: inline;
+    padding-right: 1rem;
+} */
+
+body > main {
+    grid-area: main;
+    /* background-color: purple; */
+    
+}
+
+body > footer {
+    grid-area: foot;
+    /* background-color: red; */
+}
+
+header, footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+}
+
+header h1, footer h1 {
+    margin: 0;
+}
+
+body#portfolio ul#portfolioitems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+@media screen and (min-wdith: 25em) {
+    body#portfolio ul#portfolioitems li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+body#portfolio ul#portfolioitems li img{
+    max-width: 100%;
+}
+
+#myButton {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2em;
+}
+
+#mlfq {
+    transform: rotate(270deg);
+    padding-left: 65px;
+}
